@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://registrations.kr/Reg/Form/?ec=910004&tag=pre -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>SAP Technology Summit</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no;">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    {% load static %}
+    <link href="{% static "registration/bootstrap.css" %}" rel="stylesheet">
+    <link href="{% static "registration/bootstrap-theme.css" %}" rel="stylesheet">
+    <link href="{% static "registration/Site.css" %}" rel="stylesheet">
+    <link href='{% static "Common/css/bulma/css/style.css" %}' rel="stylesheet"/>
+
+    <style type="text/css">
+        /*모바일*/
+        @media only screen and (max-width: 768px) {
+            .box {
+                padding:0 !important;
+            }
+
+            .banner {
+                height:10rem !important;
+            }
+
+            p, .label {
+                font-size:0.9rem !important;
+            }
+        }
+        .reg-banner {
+            display: table;
+            max-width: 100%;
+            margin-left: auto; 
+            margin-right: auto;
+            height: auto;
+        }
+        .agenda {
+            display: table;
+            max-width: 100%;
+            margin-left: auto; 
+            margin-right: auto;
+            height: auto;
+        }
+        
+        .main-table {
+            /* width: 1100px; */
+            max-width: 100%;
+            margin: auto;
+            border: none;
+            border-collapse: collapse;
+        }
+        
+        .input-table {
+            width: 100%;
+        }
+        .input-table td {
+            padding-left: 20px;
+            padding-top: 20px;
+            padding-bottom: 5px;
+            vertical-align: top;
+        }
+        
+        .input-table .col1 {
+            width: 200px;
+        }
+        
+        .input-table .col2 {
+            width: 350px;
+        }
+        
+        .input-table .col3 {
+            padding-left: 80px;
+            width: 200px;
+        }
+        
+        .input-table .col4 {
+            width: 350px;
+            padding-right: 20px;
+        }
+        
+        .reg-item input[type=text] {
+            font-size: 13pt;
+            width: 350px;
+        }
+        
+        .reg-item label+label {
+            margin-left: 20px;
+        }
+        
+        .reg-label {
+            font-size: 13pt;
+        }
+        
+        .reg-label label {
+            padding-top: 2px;
+        }
+        
+        .row {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        
+        .reg-row {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        
+        .reg-hint {
+            float: none;
+            font-size: 11pt;
+        }
+        
+        label.error {
+            font-size: 11pt;
+        }
+
+        
+    
+    
+    </style>
+</head>
+
+<body>
+    <form id="form1" action ="/Reg/submit" method="post" novalidate="novalidate"> {% csrf_token %}
+        <input type="hidden" id="formTag" name="FormTag" value="Pre">
+        <input type="hidden" id="eventCode" name="EventCode" value="910004"> <input type="hidden" id="visitorGb" name="VisitorGb" value="Attendee"> <input type="hidden" id="regGb" name="RegGb" value="사전">
+        <input type="hidden" id="regDateFrom" name="RegDateFrom" value="2014-01-01 00:00:00" data-hint="등록시작시각">
+        <input type="hidden" id="regDateTo" name="RegDateTo" value="2020-12-01 18:59:59" data-hint="등록마감시각">
+        <input type="hidden" id="emailSendYn" name="EmailSendYn" value="N" data-hint="등록성공시 Email 발송여부">
+        <input type="hidden" id="emailSender" name="EmailSender" value="사무국" data-hint="이메일 발송자명">
+        <input type="hidden" id="emailFrom" name="EmailFrom" value="no-reply@registrations.kr" data-hint="이메일 발송자명">
+        <input type="hidden" id="emailSubject" name="EmailSubject" value="" data-hint="이메일 제목. 공백이면 [행사명]+등록해주셔서 감사합니다.">
+        <input type="hidden" id="emailTemplate" name="EmailTemplate" value="ConfirmMail_Pre.html" data-hint="컨펌메일 템플릿 파일명">
+        <input type="hidden" id="smsSendYn" name="SmsSendYn" value="N" data-hint="등록성공시 SMS 발송여부">
+        <input type="hidden" id="smsSender" name="SmsSender" value="02-0000-0000" data-hint="SMS 발송자 번호">
+        <input type="hidden" id="smsText" name="SmsText" value="" data-hint="대괄호중복([[)시 오류. 공백이면 스마트패스(SAP Technology Summit [VisitorName]님 모바일바코드 myreg.kr/?tid=[MobileCode])">
+        <input type="hidden" id="lmsSendYn" name="LmsSendYn" value="N" data-hint="등록성공시 SMS 발송여부">
+        <input type="hidden" id="lmsSender" name="LmsSender" value="02-0000-0000" data-hint="SMS 발송자 번호">
+        <input type="hidden" id="lmsSubject" name="LmsSubject" value="【SAP Technology Summit】" data-hint="LSM 제목">
+        <input type="hidden" id="lmsText" name="LmsText" value="자동차 전장 부품 컨퍼런스 2015 행사 접수가 완료 되었습니다.\n\n최종 참석 가능 여부는 4월 17일(금) 오전 11시 이후 는 및 이메일을 통해 개별 안내될 예정입니다. (본 행사 셩격과 무관하다고 판단될 경우 등록이 제한될 수 있습니다.)">
+        <input type="hidden" id="emailDupCheck" name="EmailDupCheck" value="Y" data-hint="이메일 중복체크여부">
+        <input type="hidden" id="mobileDupCheck" name="MobileDupCheck" value="Y" data-hint="휴대폰 중복체크여부">
+        <input type="hidden" id="approvalStatus" name="ApprovalStatus" value="Pass" data-hint="지원:Apply/완료:Pass">
+        <input type="hidden" id="msgValidationFail" name="MsgValidationFail" value="입력 항목을 확인해 주세요." data-hint="입력값 체크 실패시 alert">
+        <input type="hidden" id="msgEmailCheck" name="MsgEmailChecking" value="이메일 중복을 확인 중입니다." data-hint="이메일 입력 후 포커스 이동 시 표시">
+        <input type="hidden" id="msgMobileCheck" name="MsgMobileChecking" value="휴대폰 중복을 확인 중입니다." data-hint="휴대폰 입력 후 포커스 이동 시 표시">
+        <input type="hidden" id="msgEmailInvalidFormat" name="MsgEmailInvalidFormat" value="이메일 형식이 아닙니다." data-hint="이메일 입력 후 포커스 이동 시 표시">
+        <input type="hidden" id="msgMobileInvalidFormat" name="MsgMobileInvalidFormat" value="휴대폰 형식이 아닙니다." data-hint="휴대폰번호 입력 후 포커스 이동 시 표시">
+        <input type="hidden" id="msgSubmit" name="MsgSubmit" value="처리 중... 잠시만 기다려 주시기 바랍니다." data-hint="등록버튼 누를 때 표시">
+        <input type="hidden" id="msgSubmitError" name="MsgSubmitError" value="등록이 완료되지 않았습니다. 오류내용을 확인해 주시기 바랍니다." data-hint="등록실패 시 alert">
+        <input type="hidden" id="apiLanguage" name="ApiLanguage" value="KOR" data-hint="KOR/ENG">
+
+        <div class="reg-banner">
+            <!--Banner Image-->
+            {% load static %}
+            <img src="{% static "registration/banner.png" %}" alt ="" style="max-width: 100%; height: auto;">
+        </div>
+
+        <table class="main-table">
+          <div class="container">
+                <div class="box">
+                    
+                  <section class="hero">
+                    <div class="hero-body" style="padding-bottom: 1rem">
+                      <div class="container">
+                        <h1 class="title has-text-link is-size-4-mobile">개인정보 입력</h1>
+                        <h2 class="subtitle is-size-6-mobile">
+                          정확한 본인 확인을 위해 한글 실명과 회사 이메일로 작성해
+                          주시기 바랍니다.
+                          <span class="tag is-danger">*필수선택</span>
+                        </h2>
+                      </div>
+                    </div> 
+                  </section>
+
+                  <section class="notification is-white">
+                    <div class="columns is-multiline">
+                      <div class="column is-6">
+                        <label class="reg-required">
+                          <span class="color-red">*</span>이름(한글)</label
+                        >
+                        <input
+                          type="text"
+                          id="visitorName"
+                          name="VisitorName"
+                          required="required"
+                          data-msg-required="*필수항목"
+                          class="input"
+                          aria-required="true"
+                        />
+                      </div>
+                      <div class="column is-6">
+                        <label class="reg-required"
+                          ><span class="color-red">*</span>연락처</label
+                        >
+                        <input
+                          type="text"
+                          id="mobile"
+                          name="Mobile"
+                          placeholder="하이픈(-) 없이 숫자만 입력하세요."
+                          required="required"
+                          data-msg-required="*필수항목"
+                          class="input"
+                          aria-required="true"
+                        />
+                        <div id="mobileResultBox" class="font-9"></div>
+                      </div>
+                      <div class="column is-6">
+                        <label class="reg-required"
+                          ><span class="color-red">*</span>이메일</label
+                        >
+                        <input
+                          type="text"
+                          id="email"
+                          name="Email"
+                          placeholder="가급적 소속단체의 이메일을 입력해 주세요."
+                          required="required"
+                          data-msg-required="*필수항목"
+                          class="input"
+                          class="input"
+                          aria-required="true"
+                        />
+                        <div id="emailResultBox" class="font-10"></div>
+                      </div>
+                      <div class="column is-6">
+                        <label class="reg-required"
+                          ><span class="color-red">*</span>회사명</label
+                        >
+                        <input
+                          type="text"
+                          id="company"
+                          name="Company"
+                          placeholder="소속 회사가 없는 경우 &#39;없음&#39; 입력"
+                          required="required"
+                          data-msg-required="*필수항목"
+                          class="input"
+                          aria-required="true"
+                        />
+                      </div>
+                      <div class="column is-6">
+                        <label class="reg-required"
+                          ><span class="color-red">*</span>부서</label
+                        >
+                        <input
+                          type="text"
+                          id="department"
+                          name="Department"
+                          placeholder="부서를 입력해 주세요"
+                          required="required"
+                          data-msg-required="*필수항목"
+                          class="input"
+                          aria-required="true"
+                        />
+                      </div>
+                      <div class="column is-6">
+                        <label class="reg-required"
+                          ><span class="color-red">*</span>직급</label
+                        >
+                        <input
+                          type="text"
+                          id="jobTitle"
+                          name="JobTitle"
+                          placeholder="직급을 입력해 주세요"
+                          required="required"
+                          data-msg-required="*필수항목"
+                          class="input"
+                          aria-required="true"
+                        />
+                      </div>
+                    </div>
+                  </section>
+                </div> -->
+            
+            <tbody>
+                <tr>
+                    <td style="padding-top: 60px;">
+                        <div class="reg-head_left">
+                            개인정보 입력
+                        </div>
+                        <div class="reg-head_right">
+                            정확한 본인 확인을 위해 한글 실명과 회사 이메일로 등록해 주시기 바랍니다.
+                        </div>
+                        <div style="float: right;"><span style="color: red;">*필수선택</span></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="border-bottom: 1px solid rgb(229, 229, 229); border-top: 1px solid rgb(229, 229, 229); padding-bottom: 10px;">
+                        <table class="input-table">
+                            <tbody>
+                                <tr>
+                                    <td class="col1">
+                                        <div class="reg-label"><label class="reg-required"><span
+                                                    class="color-red">*</span>이름(한글)</label> <label for="VisitorName" class="error"></label></div>
+                                    </td>
+
+                                    <td class="col2">
+                                        <div class="reg-item"><input type="text" id="visitorName" name="VisitorName" required="required" data-msg-required="*필수항목" class="form-control reg-input" aria-required="true">
+                                            <div class="reg-hint" style="display: none;"><img src="{% static "registration/icon_info_b.png" %}"> 성명을 입력해 주세요.
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="col3">
+                                        <div class="reg-label"><label class="reg-required"><span
+                                                    class="color-red">*</span>연락처</label> <label for="Mobile" class="error"></label></div>
+                                    </td>
+                                    <td class="col4">
+                                        <div class="reg-item"><input type="text" id="mobile" name="Mobile" placeholder="***-****-****" required="required" data-msg-required="*필수항목" class="form-control reg-input" aria-required="true">
+                                            <div id="mobileResultBox" class="font-9"></div>
+                                            <div class="reg-hint" style="display: none;"><img src="{% static "registration/icon_info_b.png" %}"> ***-****-****의 형태로 입력하세요.
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col1">
+                                        <div class="reg-label"><label class="reg-required"><span
+                                                    class="color-red">*</span>이메일:</label> <label for="Email" class="error"></label></div>
+                                    </td>
+                                    <td class="col2">
+                                        <div class="reg-item"><input type="text" id="email" name="Email" required="required" data-msg-required="*필수항목" class="form-control reg-input" aria-required="true">
+                                            <div class="reg-hint" style="display: none;"><img src="
+                                                    {% static "registration/icon_info_b.png" %}"> 가급적 소속단체의 이메일을 입력해 주세요.
+                                            </div>
+                                            <div id="emailResultBox" class="font-10"></div>
+                                        </div>
+                                    </td>
+                                    <td class="col3">
+                                        <div class="reg-label"><label class="reg-required"><span
+                                                    class="color-red">*</span>회사명</label> <label for="Company" class="error"></label></div>
+                                    </td>
+                                    <td class="col4">
+                                        <div class="reg-item"><input type="text" id="company" name="Company" required="required" data-msg-required="*필수항목" class="form-control reg-input" aria-required="true">
+                                            <div class="reg-hint" style="display: none;"><img src="
+                                                    {% static "registration/icon_info_b.png" %}"> 소속 회사가 없는 경우 "없음" 입력
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col1">
+                                        <div class="reg-label"><label class="reg-required"><span
+                                                    class="color-red">*</span>부서</label></div>
+                                    </td>
+                                    <td class="col2">
+                                        <div class="reg-item"><input type="text" id="department" name="Department" required="required" data-msg-required="*필수항목" class="form-control reg-input" aria-required="true">
+                                            <div class="reg-hint" style="display: none;"><img src="
+                                                    {% static "registration/icon_info_b.png" %}"> 부서를 입력해 주세요.
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="col3">
+                                        <div class="reg-label"><label class="reg-required"><span
+                                                    class="color-red">*</span>직급</label> <label for="JobTitle" class="error"></label></div>
+                                    </td>
+                                    <td class="col4">
+                                        <div class="reg-item"><input type="text" id="jobTitle" name="JobTitle" required="required" data-msg-required="*필수항목" class="form-control reg-input" aria-required="true">
+                                            <div class="reg-hint" style="display: none;"><img src=" {% static "registration/icon_info_b.png" %}"> 직급을 입력해 주세요.
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </div>
+               
+                <tr>
+                    <td style="padding-top: 60px;">
+                        <div class="reg-head_left">
+                            개인정보 및 수집활용 동의
+                        </div>
+                        <div class="reg-head_right"></div>
+                        <div style="float: right;"><span style="color: red;">*필수선택</span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 20px;">
+                        <div class="row reg-row" style="border-bottom: 2px solid rgb(229, 229, 229); border-top: 2px solid rgb(229, 229, 229);">
+                            <div style="color: darkgray; font-size: 18px; font-weight: bold; border-bottom: 0px; margin-top: 30px; margin-bottom: 0px; vertical-align: bottom; display: inline-block;">
+                                수신동의
+                            </div>
+                            <div class="row reg-row">
+                                <div class="col-sm-10">
+                                    <div class="reg-label" style="font-size: 13pt; color: black;"><label class="reg-required"><span class="color-red">*</span><input type="checkbox"
+                                                name="Answer03" value="Y" required="required" data-msg-required="*필수항목"
+                                                onchange="$(&#39;input[name=Answer04]&#39;).prop(&#39;checked&#39;, true);"
+                                                class="reg-input checkbox-item-normal" aria-required="true">
+                                            향후 SAP 제품 및 서비스에 대한 정보를 수신하시겠습니까? 이 체크 박스를 선택하면 <a
+                                                href="http://www.sapgdpr.co.kr/statement.html" target="_blank"
+                                                style="color: blue;">SAP마케팅 동의서</a>에 따라 귀하의 연락처 정보가 SAP Korea에 사용됨에
+                                            동의합니다.
+                                        </label> <label for="Answer03" class="error"></label></div>
+                                </div>
+                            </div>
+                            <div class="row reg-row">
+                                <div class="col-sm-10">
+                                    <div class="reg-item"><label for="Answer04" class="error"></label> <label><input
+                                                type="checkbox" name="Answer04" value="Email"
+                                                class="reg-input checkbox-item-normal">
+                                            E-mail
+                                        </label> <label><input type="checkbox" name="Answer04" value="Phone"
+                                                class="reg-input checkbox-item-normal">
+                                            전화번호
+                                        </label></div>
+                                </div>
+                            </div>
+                            <div style="color: darkgray; font-size: 18px; font-weight: bold; border-bottom: 0px; margin-top: 30px; margin-bottom: 0px; vertical-align: bottom; display: inline-block;">
+                                SAP 파트너사 수신동의
+                            </div>
+                            <div class="row reg-row">
+                                <div class="col-sm-10">
+                                    <div class="reg-label" style="font-size: 13pt; color: black;"><label class="reg-required"><span class="color-red">*</span><input type="checkbox"
+                                                name="Answer05" value="Y" required="required" data-msg-required="*필수항목"
+                                                class="reg-input checkbox-item-normal" aria-required="true">
+                                            본인이 제공한 정보를 <a href="http://www.sapgdpr.co.kr/statement.html"
+                                                target="_blank" style="color: blue;">SAP 관계사와 공유</a>하여 마케팅 관련 정보를 추가로 제공
+                                            할 수 있음에 동의합니다.
+                                        </label></div>
+                                    <div><label for="Answer05" class="error"></label></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row reg-row" style="padding-top: 15px;">
+                            <div class="col-sm-8">
+                                <div class="reg-label" style="font-size: 13pt; color: black;"><label><input
+                                            type="checkbox" name="Answer01" value="Y" onclick="agreeAll();"
+                                            class="reg-input checkbox-item-normal"> 개인정보 수신동의 전체동의</label> <label for="Answer01" class="error"></label></div>
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <input style="display: block; margin :0 auto;" class ="submit" type="submit" value ='제출'>
+        <div class="reg-banner" style="padding-top: 40px;">
+            <img src="{% static "registration/bottom.png" %}" width="100%" usemap="#map1"> 
+            <map name="map1">
+                <area shape="rect" coords="53,25,156,54" href="https://www.sap.com/korea/about/legal/copyright.html" target="_blank" alt=""> 
+                <area shape="rect" coords="190,26,335,55" href="http://www.sapgdpr.co.kr/" target="_blank" alt=""> 
+                <area shape="rect" coords="369,27,460,53" href="https://www.sap.com/corporate/en/legal/impressum.html" target="_blank" alt="">
+            </map>
+        </div>
+
+        <div id="successPopup" class="popup-div">
+            <div style="padding: 10px; border-bottom: 1px solid rgb(236, 236, 236);">
+                등록이 완료되었습니다.
+            </div>
+            <div style="text-align: center; padding: 4px;"><input type="button" value="확인" onclick="bPopup.close();" class="btn btn-sm"></div>
+        </div>
+
+        <div id="notOpenPopup" class="popup-div">
+            <div style="padding: 10px; border-bottom: 1px solid rgb(236, 236, 236);">
+                등록기간이 아닙니다.<br> 등록기간 : 2015-00-00 ~ 2015-00-00
+            </div>
+            <div style="text-align: center; padding: 4px;"><input type="button" value="확인" onclick="bPopup.close()" class="btn btn-sm"></div>
+        </div>
+    </form>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------->
+    <!-- SCRIPT ---------------------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------------------------------->
+    <!--[if lte IE 8]>
+      <script src="/plugin/imagemap-resizer-master/js/ie8.polyfil.js"></script>
+  <![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="{% static "registration/jquery-1.12.4.js" %}"></script>
+    <script src="{% static "registration/jquery-ui-1.12.1.js" %}"></script>
+    <script src="{% static "registration/bootstrap.js" %}"></script>
+    <script src="{% static "registration/jquery.validate.js" %}"></script>
+    <script src="{% static "registration/jquery.bpopup-0.10.0.min.js" %}"></script>
+    <script src="{% static "registration/CommonScript.js" %}"></script>
+    <script src="{% static "registration/vue.js" %}"></script>
+    <script src="{% static "image-map-resizer-master/js/imageMapResizer.min.js" %}"></script>
+   
+
+    <script>
+        //Vue.js를 이용해서 개인 정보 수집동의를 동적으로 반응하게 했음
+        var app = new Vue({ //vue 인스턴스 선언
+            el: "#form1", //기존에 있는 엘리먼트를 마운트 한다. #페이지내의 특정 섹션(태그)
+            data: {
+                TrackType: "",
+            },
+            watch: { //데이터 변경에 반응 
+                //개인 정보 수집 동의에 새로운 값이 들어오면 로그로 띄워준다.
+                Answer01: function(newValue) {
+                    console.log(newValue)
+                }
+            }
+        });
+
+        $(function() {
+            /* TrackType 미사용
+            app.TrackType = getParam("TrackType");
+            if (app.TrackType !== "T1" && app.TrackType !== "T2" && app.TrackType !== "T3" && app.TrackType !== "TA") {
+                alert("잘못된 URL입니다. 사무국에 문의 바랍니다.");
+            }
+            */
+        })
+    </script>
+
+    <!--다음 우편번호-->
+    <script src="{% static "registration/postcode.v2.js" %}"></script>
+    <script charset="UTF-8" type="text/javascript" src="{% static "registration/200421.js" %}" "></script>
+
+    <script>
+        function setJuso(zipCode, roadAddr, roadAddr1, roadAddr2, jibunAddr) {
+            $('#address1').val(roadAddr1);
+            $('#address2').val(roadAddr2 + ' ');
+            $('#zipCode').val(zipCode);
+
+            //$('#jibunAddr').val(jibunAddr);
+            $('#address2').selectRange(999, 999);
+            $('#address2').focus();
+        }
+    </script>
+    <script type="text/javascript">
+   
+    </script>
+
+    <script>
+        var bPopup;
+
+        // ie version 체크
+        if (getIeVersion() < 10) {
+            window.location.href = '/Common/BrowserLowVersion.html';
+        }
+
+        function agreeAll() {
+            if (!window.event)
+                return;
+            var checkedValue = $(window.event.target).val();
+
+            $("input:checkbox[name=Answer02][value=" + checkedValue + "]").prop("checked", true);
+            $("input:checkbox[name=Answer03][value=" + checkedValue + "]").prop("checked", true);
+            $("input:checkbox[name=Answer04]").prop("checked", checkedValue == "Y");
+            $("input:checkbox[name=Answer05][value=" + checkedValue + "]").prop("checked", true);
+
+        }
+
+        function toggleSubItem(e, target) {
+            var t = $("input[name=" + target + ']');
+            if ($(e).val() == "기타") {
+                t.show();
+            }
+            else {
+                t.val("");
+                t.hide();
+            }
+        }
+        
+        
+        //What happened  when page is loaded
+        $(function () {
+        // $('.reg-hint').css('display', 'none').each(function () { // 커서를 가져다 대면 텍스창 아래에 아이콘 + ~~를 입력해 주세요가 뜨게 만든다.
+        //     $(this).prepend('<img src="{% static "registration/icon_info_b.png" %} " />')
+        // });
+
+        // $('label.reg-required').each(function () {
+        //         $(this).prepend("<span class='color-red'>*</span>");
+        //     })
+
+        $('.reg-input').bind({
+            'focus': function() {
+                $('.reg-hint').css('display', 'none');
+                //위 or 아래에 있는 hint 제어
+                $(this).parent().parent().find('.reg-hint').css('display', 'block');
+                //$(this).parent().parent().find('.reg-reg-label').css('display', 'none');
+            }
+        });
+
+        $('input').each(function(e)
+            // 값 대치 안된 필드들 초기화
+            {
+                var val = $(this).val();
+                if (val.substr(0, 1) == "[" && val.substr(val.length - 1, 1) == "]") //input 태그 안에 있는 값들이 아직 입력되지 않았다면 값을 비우라
+                    $(this).val('');
+            })
+
+        $('textarea').each(function(e)
+            // 값 대치 안된 필드들 초기화
+            {
+                var val = $(this).val();
+                if (val.substr(0, 1) == "[" && val.substr(val.length - 1, 1) == "]")
+                    $(this).val('');
+            })
+
+
+        // popup
+        $('.popup-button').click(function() {
+            bPopup = $($(this).data('popup')).bPopup({
+                opacity: 0.6,
+                positionStyle: 'fixed' //'fixed' or 'absolute'
+            });
+        })
+
+        // 휴대폰 format
+        // mobile 태그의 포커스가 해제되었을 때 발생
+        $('#mobile').blur(function() {
+            OnMobileBlur();
+        });
+
+
+        // content load
+        $('.content-box').each(function() {
+            var src = $(this).data('src');
+            $(this).load(src);
+        });
+
+
+        // checkbox
+        InitCheckBoxItem();
+
+        // validation init
+        InitValidation();
+
+        // ajax init
+        InitSubmit();
+
+        // ajax init
+        InitMobile();
+
+        // ajax init
+        InitEmail();
+
+        CheckRegDate();
+
+        // imagemap
+     
+
+
+        }); // end of load()
+        jQuery(function($) {
+            $('img').imageMapResize();
+        });
+
+
+
+
+        // checkbox
+        function InitCheckBoxItem() {
+            $('.checkbox-item-normal').change(function() {
+                // all 해제
+                var name = $(this).prop('name');
+                $('input[type=checkbox][name=' + name + '].checkbox-item-all').removeAttr('checked');
+            })
+            $('.checkbox-item-all').change(function() {
+                // all 해제
+                var name = $(this).prop('name');
+                $('input[type=checkbox][name=' + name + '].checkbox-item-normal').removeAttr('checked');
+            })
+        }
+
+        // 등록기간 체크
+        function CheckRegDate() {
+            $.ajax({
+                type: "POST",
+                url: "/Reg/CheckRegDateAction",
+                data: {
+                    'date' : $('#regDateFrom').serialize() + "&" + $('#regDateTo').serialize(),
+                    'csrfmiddlewaretoken' : '{{ csrf_token }}'
+                    },
+                //contentType: "application/json; charset=utf-8",
+                //dataType: "json",
+                'success': OnCheckRegDateSuccess, //성공했을때 실행
+                'error': OnCheckRegDateError //실패했을 때 실행
+            });
+        }
+
+        // submit ajax 성공
+        function OnCheckRegDateSuccess(data, status) {  
+            var returnCode = data.ReturnCode;
+            var returnMessage = data.ReturnMessage;
+           
+            if (returnCode == 0) {
+                // OK
+            } else if (returnCode == 200) { // not open
+                $('#submit').attr('disabled', 'disabled');
+                $(".reg-group-header").hide();
+                $(".reg-group-body").hide();
+                bPopup = $('#notOpenPopup').bPopup({
+                    modalClose: false
+                });
+            } else if (returnCode == 210) { // closed
+                $('#submit').attr('disabled', 'disabled');
+                bPopup = $('#closedPopup').bPopup({
+                    modalClose: false
+                });
+            } else {
+                $('#submit').attr('disabled', 'disabled');
+                alert(returnMessage);
+            }
+        }
+
+        // submit ajax 실패
+        function OnCheckRegDateError(data, status) {
+            alert(data.statusText);
+        }
+
+
+        // 제출처리
+        function InitSubmit() {
+            $('#submit').click(function(e) {
+                alert("이건가")
+                if (window.event)
+                    window.event.preventDefault();
+
+                if ($("#form1").valid() == false) {
+                    alert($('#msgValidationFail').val());
+                    return;
+                }
+
+                $('#submitResultBox').html("<img src='/Common/Images/Indicator.gif' />" + $('#msgSubmit').val());
+
+                $.ajax({
+                    type: "post",
+                    url: "/Reg/CreateAction", //해당 url로 ajax를 보낸다.
+                    data: $('#form1').serialize(),
+                    //contentType: "application/json; charset=utf-8",
+                    //dataType: "json",
+                    success: OnSubmitSuccess,
+                    error: OnSubmitError
+                });
+            });
+        }
+
+        // submit ajax 성공
+        function OnSubmitSuccess(data, status) {
+            hideAjaxIndicator($('#submtAjaxIndicator'));
+            $('#submitResultBox').html('');
+
+            var json = JSON.parse(data);
+            var returnCode = json.ReturnCode;
+            var returnMessage = json.ReturnMessage;
+
+            if (returnCode == 0) {
+                window.location.href = '/Reg/Success';
+                /*
+                bPopup = $('#successPopup').bPopup({
+                    modalClose: false,
+                    onClose: function () {
+                        window.location.href = '/Reg/Success';
+                    }
+                });
+                */
+            } else if (returnCode == 200) //등록기간 아님
+            {
+                alert($('#msgNotOpen').val());
+            } else {
+                alert(returnMessage);
+            }
+        }
+
+        // submit ajax 실패
+        function OnSubmitError(data, status) {
+            $('#submitResultBox').html(data.statusText);
+            alert($('#msgSubmitError').val());
+        }
+
+        function InitEmail() {
+            $('#email').keydown(function() {
+                //$('#emailResultBox').html('');
+            })
+
+            // email check
+            $('#email').blur(function() {
+                $("#emailResultBox").html("");
+                if (!IsEmailFormat($(this).val())) {
+                    $("#emailResultBox").html('<img src="{% static "registration/icon_info_r.png" %}" /><span class="color-red">' + $("#msgEmailInvalidFormat").val() + "</span>");
+                    // $(this).prepend('<img src="{% static "registration/icon_info_b.png" %} " />')
+                    return;
+                }
+
+                if ($("#emailDupCheck").val() == "Y") {
+                    $('#emailResultBox').html("<img src='/Common/Images/Indicator.gif' />" + $('#msgEmailCheck').val());
+
+                    $.ajax({
+                        type: "post",
+                        url: "/Reg/CheckEmailAction",
+                        data: $('#form1').serialize(),
+                        //contentType: "application/json; charset=utf-8",
+                        //dataType: "json",
+                        success: emailAjaxSuccessCallback, // displayData함수로 외부에 출력코드 작성
+                        error: emailAjaxErrorCallback
+                    });
+                }
+            })
+        }
+
+        function InitMobile() {
+            $('#mobile').keydown(function() {
+                //$('#mobileResultBox').html('');
+            });
+
+            // mobile check
+            $('#mobile').blur(function() {
+
+                if (!isMobileFormat($(this).val())) {
+                    $("#mobileResultBox").html('<img src="{% static "registration/icon_info_r.png" %}" /><span class="color-red">' + $("#msgMobileInvalidFormat").val() + '</span>');
+                    return;
+                }
+
+                if ($("#mobileDupCheck").val() == "Y") {
+                    $('#mobileResultBox').html("<img src='/Common/Images/Indicator.gif' />" + $('#msgMobileCheck').val());
+
+                    $.ajax({
+                        type: "post",
+                        url: "/Reg/CheckMobileAction",
+                        data: $('#form1').serialize(),
+                        //contentType: "application/json; charset=utf-8",
+                        //dataType: "json",
+                        success: mobileAjaxSuccessCallback, // displayData함수로 외부에 출력코드 작성
+                        error: mobileAjaxErrorCallback
+                    });
+                }
+            });
+        }
+
+
+        function InitValidation() {
+            $('#form1').validate({
+                //errorPlacement: function (error, element) {
+                //    // Append error within linked label
+                //    $(element).closest("form").find("label[for='" + element.attr("name") + "']").append(error);
+                //},
+                //errorElement: "span",
+                rules: {
+                    Email: {
+                        required: true
+                    },
+                    JobTitle: {
+                        required: true
+                    },
+                    Phone: {
+                        required: true
+                    },
+                    VisitorName: {
+                        required: true
+                    },
+                    Department: {
+                        required: true
+                    },
+                    Address1: {
+                        required: true
+                    },
+                    Company: {
+                        required: true
+                    },
+                    Answer02: {
+                        required: true
+                    },
+                    Answer03: {
+                        required: true
+                    },
+                    Answer04: {
+                        required: true
+                    },
+                    Answer05: {
+                        required: true
+                    },
+                    Text01: {
+                        required: true
+                    },
+                    Text02: {
+                        required: true
+                    },
+                    Text03: {
+                        required: true
+                    },
+                    Text04: {
+                        required: true
+                    },
+                    Text05: {
+                        required: true
+                    },
+                    Text06: {
+                        required: true
+                    },
+                    Mobile: {
+                        required: true
+                    },
+                    Memo01: {
+                        required: true
+                    }
+                },
+                messages: {
+                    Email: {
+                        required: "필수 입력"
+                    },
+                    JobTitle: {
+                        required: "필수 입력"
+                    },
+                    Phone: {
+                        required: "필수 입력"
+                    },
+                    VisitorName: {
+                        required: "필수 입력"
+                    },
+                    Department: {
+                        required: "필수 입력"
+                    },
+                    Address1: {
+                        required: "필수 입력"
+                    },
+                    Company: {
+                        required: "필수 입력"
+                    },
+                    Answer02: {
+                        required: "필수 입력"
+                    },
+                    Answer03: {
+                        required: "필수 입력"
+                    },
+                    Answer04: {
+                        required: "필수 입력"
+                    },
+                    Answer05: {
+                        required: "필수 입력"
+                    },
+                    Text01: {
+                        required: "*Track이 선택되지 않았습니다. "
+                    },
+                    Text02: {
+                        required: "*14:00 세션이 선택되지 않았습니다. "
+                    },
+                    Text03: {
+                        required: "*14:30 세션이 선택되지 않았습니다. "
+                    },
+                    Text04: {
+                        required: "*15:30 세션이 선택되지 않았습니다. "
+                    },
+                    Text05: {
+                        required: "*16:00 세션이 선택되지 않았습니다. "
+                    },
+                    Text06: {
+                        required: "*16:30 세션이 선택되지 않았습니다. "
+                    },
+                    Mobile: {
+                        required: "필수 입력"
+                    },
+                    Memo01: {
+                        required: "필수 입력"
+                    }
+                }
+            })
+        }
+
+
+        // email ajax 성공
+        function emailAjaxSuccessCallback(data, status) {
+           
+            var returnCode = data.ReturnCode;
+            
+            var returnMessage = data.ReturnMessage;
+
+
+            if (returnCode == 0) {
+                $('#emailResultBox').html('<img src="{% static "registration/icon_check_b.png" %}" /><span class="ajax-success-msg">' + returnMessage + '</span>');
+            } else {
+
+                $('#emailResultBox').html('<img src="{% static "registration/icon_info_r.png"  %}" /><span class="ajax-error-msg">' + returnMessage + "</span>");
+            }
+        }
+
+        // email ajax 실패
+        function emailAjaxErrorCallback(data, status) {
+            $('#emailResultBox').html("<span class='ajax-error-msg'>" + data.statusText + "</span>");
+            //alert($('#msgEmailError').val());
+        }
+
+        // mobile ajax 성공
+        function mobileAjaxSuccessCallback(data, status) {
+
+            var returnCode = data.ReturnCode;
+            var returnMessage = data.ReturnMessage;
+
+
+            if (returnCode == 0) {
+                $('#mobileResultBox').html('<img src="{% static "registration/icon_check_b.png" %}" /><span class="ajax-success-msg">' + returnMessage + "</span>");
+            } else {
+                $('#mobileResultBox').html('<img src="{% static "registration/icon_info_r.png"  %}" /><span class="ajax-error-msg">' + returnMessage + "</span>");
+            }
+        }
+
+        // mobile ajax 실패
+        function mobileAjaxErrorCallback(data, status) {
+            $('#mobileResultBox').html("<span class='ajax-error-msg'>" + data.statusText + "</span>");
+            //alert($('#msgEmailError').val());
+        }
+
+        // ajax indicator
+        function showAjaxIndicator(elemnet) {
+            element.slideDown('fast');
+        }
+
+        function hideAjaxIndicator(element) {
+            element.hide();
+        }
+
+        function setJuso(zipCode, roadAddr, roadAddr1, roadAddr2, jibunAddr) {
+            $('#address1').val(roadAddr1);
+            $('#address2').val(roadAddr2 + ' ');
+            $('#zipCode').val(zipCode);
+
+
+            //$('#jibunAddr').val(jibunAddr);
+            $('#address2').selectRange(999, 999);
+            $('#address2').focus();
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        $(function() {
+            if (getParam("IsTest") == "Y") {
+                $('#visitorName').val('홍길동');
+                $('#company').val('유비컴');
+                $('#department').val('개발팀');
+                $('#email').val('ysd@ubcomm.kr');
+                $('#mobile').val('010-7709-9306');
+            }
+        });
+    </script>
+
+    <!-- BEGIN OF Weblog-->
+    <!--<script type="texㅅ-->
+    <div id="closedPopup" class="popup-div" style="left: 355px; position: absolute; top: 176px; z-index: 9999; opacity: 0; display: none;">
+        <div style="padding: 10px; border-bottom: 1px solid rgb(236, 236, 236); text-align: center;"><img src="{% static "registration/close.png" %}"></div>
+        <div style="text-align: center; padding: 4px;"><input type="button" value="확인" onclick="bPopup.close()" class="btn btn-sm"></div>
+    </div>
+</body>
+
+</html>
