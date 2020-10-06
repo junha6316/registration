@@ -20,10 +20,11 @@ from django.conf.urls import include, url
 
 urlpatterns = [
     url(r"admin/", admin.site.urls),
-    url(r"Reg/", include("participants.urls")),
+    url(r"1/", include("participants.urls")),
+    url(r"2/", include("application_1.urls")),
+    url(r"3/", include("application_2.urls")),
 ]
 
 
-admin.site.index_title = ('내 관리자 페이지')
-admin.site.site_header =('관리자 페이지')
-
+admin.site.index_title = "내 관리자 페이지"
+admin.site.site_header = "관리자 페이지"

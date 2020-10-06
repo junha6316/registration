@@ -30,7 +30,7 @@ SECRET_KEY = json.loads(open(SECRET_PATH).read())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['keystonellc.cate24.com','registration.keystonellc.kr']
 
 
 # Application definition
@@ -38,7 +38,6 @@ ALLOWED_HOSTS = []
 DJANGO_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
-    "polymorphic",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
@@ -48,6 +47,8 @@ DJANGO_APPS = [
 MY_APPS = [
     "users.apps.UsersConfig",
     "core.apps.CoreConfig",
+    "application_1.apps.Application_1Config",
+    "application_2.apps.Application_2Config",
     "participants.apps.ParticipantsConfig",
 ]
 
@@ -55,7 +56,7 @@ THIRD_PARTY_APPS = [
     "bulma",
 ]
 
-INSTALLED_APPS = DJANGO_APPS + MY_APPS + THIRD_PARTY_APPS
+INSTALLED_APPS = MY_APPS + DJANGO_APPS + THIRD_PARTY_APPS
 
 
 MIDDLEWARE = [
@@ -73,7 +74,7 @@ ROOT_URLCONF = "config.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR,'templates')],
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -99,7 +100,6 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
-# SOUTH_DATABASE_ADAPTER = {"default": "south.db.sqlite3"}
 
 
 # Password validation
@@ -138,13 +138,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+
 STATIC_URL = "/static/"  # Setting for Static File's URL
 
 AUTH_USER_MODEL = "users.User"
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "/participants/static"),
+    os.path.join(BASE_DIR, "static"),
 ]
+
+
+STATIC_ROOT = os.path.join(ROOT_DIR, ".static_root")
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 

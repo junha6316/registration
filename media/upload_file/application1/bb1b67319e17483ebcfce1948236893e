@@ -1,0 +1,51 @@
+0. 모든 변수명 영어로 바꾸기
+평균기온(℃) -> Average temperature
+최저기온(℃) -> Min temperature
+최고기온(℃) -> Max temperature
+상대습도(%) -> Humidity
+일평균운량(한국 기상청 기준 운량: 0~2은 맑음, 3~5는 구름 조금, 6~8은 구름 많음, 9~10은 흐림) -> Average Cloudiness
+일조시간 -> Sunshine hours
+강우량(mm) -> Rainfall
+평균풍속(m/s) -> Average wind speed
+최심신적설(cm)(자정부터 다음날 자정까지 새로 쌓인 눈의 최대 깊이) -> Snowfall
+이슬점(최고기온 기준) -> Dew point temperature
+최저기온이 최고기온기준 이슬점보다 낮은가 -> Chance of condensation
+날씨 -> Atmospheric phenomenon
+눈 -> Snow
+소낙눈 -> Snow showers
+진눈깨비 -> Sleet
+비 -> Rain
+소나기 -> Showers
+안개비 -> Drizzle
+황사 -> Yellow dust
+안개 -> Fog
+박무 -> Mist
+연무 -> Haze
+낮은안개 -> 맞는 걸 못찾아서 제외했습니다
+
+미세먼지(㎍/m3) -> PM10
+초미세먼지(㎍/m3) -> PM2.5
+오존(ppm) -> O3
+이산화질소(ppm) -> NO2
+일산화탄소(ppm) -> CO
+아황산가스(ppm) -> SO2
+
+계절 -> Seasons
+Spring 3~5월
+Summer 6~8월
+Autumn 9~11월
+Winter 12~2월
+공휴일 -> Holiday
+주말 -> Weekends
+일일대여수(2017년 12월은 uci데이터에서, 2018년 1~11월은 서울열린데이터광장에서 추출) -> Daily rent
+
+p1. 강우량, 최심 신적설 -> 공란 0으로 채우기
+p2. 최저기온이 최고기온기준 이슬점보다 낮은가 -> 공란 0으로 채우고 T를 1로 바꾸기
+p3. 지점, 이슬점(평균기온기준), 최저기온이 평균기온기준 이슬점보다 낮은가 -> column 삭제하기
+p4. 날씨 공란 0으로 채우기
+p5. 날씨(눈, 소낙눈, 진눈깨비, 비, 소나기, 황사, 안개, 박무, 연무, 낮은안개, 안개비) 각각 column 만들어주고 0/1로 채우기
+p6. 계절 column 추가해서 봄여름가을겨울로 채우기
+p7. 사계절, 공휴일, 주말 각각 column 추가하고 0/1로 채우기
+p8. 일일 자전거 대여수 column 추가
+
+강우량, 최심 신적설 단위 통일할 필요 없음. 나중에 다 0~1 사이로 스케일링할 예정
