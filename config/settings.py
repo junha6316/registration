@@ -47,9 +47,9 @@ DJANGO_APPS = [
 MY_APPS = [
     "users.apps.UsersConfig",
     "core.apps.CoreConfig",
+    "participants.apps.ParticipantsConfig",
     "application_1.apps.Application_1Config",
     "application_2.apps.Application_2Config",
-    "participants.apps.ParticipantsConfig",
 ]
 
 THIRD_PARTY_APPS = [

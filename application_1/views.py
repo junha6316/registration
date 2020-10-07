@@ -130,12 +130,12 @@ def submit(request):
 
     context = {"file_infos": enumerate(file_infos)}
 
-    return render(request, "participants/download.html", context)
+    return render(request, f"{app_name}/download.html", context)
 
 
 def file_download(request, file_name):
     if request.method == "GET":
-        return render(request, 'participants/inappropriate_contact.html')
+        return render(request, f"{app_name}/inappropriate_contact.html")
       
     _file = get_object_or_404(File, file_name=file_name)
    

@@ -14,15 +14,16 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
 
 from .models import Participant, File
+from .apps import Application_2Config
 
-
+app_name = Application_2Config.name
 # Create your views here.
 def index(request):
     """ Index Page Defintion"""
     # print(request)
     # print(request.POST.get("date"))
 
-    return render(request, "participants/registration.html")
+    return render(request, f"{app_name}/registration.html")
 
 
 def checkRegDate(request):
@@ -98,7 +99,7 @@ def submit(request):
     """return to Download Page"""
 
     if request.method == "GET":
-        return render(request, 'participants/inappropriate_contact.html')
+        return render(request, f"{app_name}/inappropriate_contact.html")
 
     data = request.POST
     name = data.get("VisitorName")
@@ -127,12 +128,12 @@ def submit(request):
 
     context = {"file_infos": enumerate(file_infos)}
     print(file_infos)
-    return render(request, "participants/download.html", context)
+    return render(request, f"{app_name}/download.html", context)
 
 
 def file_download(request, file_name):
     if request.method == "GET":
-        return render(request, 'participants/inappropriate_contact.html')
+        return render(request, f"{app_name}/inappropriate_contact.html")
       
     _file = get_object_or_404(File, file_name=file_name)
    

@@ -11,7 +11,7 @@
     <link href="{% static "registration/css/bootstrap.css" %}" rel="stylesheet">
     <link href="{% static "registration/css/bootstrap-theme.css" %}" rel="stylesheet">
     <link href="{% static "registration/css/Site.css" %}" rel="stylesheet">
-    <link href='{% static "/Common_1/css/bulma/css/style.css" %}' rel="stylesheet"/>
+    <link href='{% static "/Common/css/bulma/css/style.css" %}' rel="stylesheet"/>
     <!-- Using Bulma FrameWork -->
 
     <style type="text/css">
@@ -123,7 +123,7 @@
 </head>
 
 <body>
-    <form id="form1" action ="/Reg/submit" method="post" novalidate="novalidate"> {% csrf_token %}
+    <form id="form1" action ="./submit" method="post" novalidate="novalidate"> {% csrf_token %}
         <input type="hidden" id="formTag" name="FormTag" value="Pre">
         <input type="hidden" id="eventCode" name="EventCode" value="910004"> <input type="hidden" id="visitorGb" name="VisitorGb" value="Attendee"> <input type="hidden" id="regGb" name="RegGb" value="사전">
         <input type="hidden" id="regDateFrom" name="RegDateFrom" value="2014-01-01 00:00:00" data-hint="등록시작시각">
@@ -155,7 +155,7 @@
         <div class="reg-banner">
             <!--Banner Image-->
             {% load static %}
-            <img src="{% static "Common_1/img/banner.png" %}" alt ="" style="max-width: 100%; height: auto;">
+            <img src="{% static "Common/img/banner.png" %}" alt ="" style="max-width: 100%; height: auto;">
         </div>
 
      
@@ -366,7 +366,7 @@
 </form>
     
 <div class="reg-banner" style="padding-top: 40px;">
-    <img src="{% static "Common_1/img/bottom.png" %}" style='width:100%;' usemap="#map1"> 
+    <img src="{% static "Common/img/bottom.png" %}" style='width:100%;' usemap="#map1"> 
     <map name="map1" id="map1">
         <area shape="rect" coords="53,25,156,54" href="https://www.sap.com/korea/about/legal/copyright.html" target="_blank" alt=""> 
         <area shape="rect" coords="190,26,335,55" href="http://www.sapgdpr.co.kr/" target="_blank" alt=""> 
@@ -391,7 +391,7 @@
     <script src="{% static "registration/js/jquery.bpopup-0.10.0.min.js" %}"></script>
     <script src="{% static "registration/js/CommonScript.js" %}"></script>
     <script src="{% static "registration/js/vue.js" %}"></script>
-    <script src='{% static "Common_1/js/rwdImageMaps/jQuery-rwdImageMaps-master/jquery.rwdImageMaps.min.js" %}'></script>
+    <script src='{% static "Common/js/rwdImageMaps/jQuery-rwdImageMaps-master/jquery.rwdImageMaps.min.js" %}'></script>
     <script>
       jQuery(document).ready(function(e) {
         jQuery('img[usemap]').rwdImageMaps();
@@ -445,7 +445,7 @@
 
         // ie version 체크
         if (getIeVersion() < 10) {
-            window.location.href = '/Common_1/BrowserLowVersion.html';
+            window.location.href = '/Common/BrowserLowVersion.html';
         }
 
         function agreeAll() {
@@ -571,7 +571,7 @@
         function CheckRegDate() {
             $.ajax({
                 type: "POST",
-                url: "/Reg/CheckRegDateAction",
+                url: "./CheckRegDateAction",
                 data: {
                     'date' : $('#regDateFrom').serialize() + "&" + $('#regDateTo').serialize(),
                     'csrfmiddlewaretoken' : '{{ csrf_token }}'
@@ -617,7 +617,6 @@
         // 제출처리
         function InitSubmit() {
             $('#submit').click(function(e) {
-                alert("이건가")
                 if (window.event)
                     window.event.preventDefault();
 
@@ -626,11 +625,11 @@
                     return;
                 }
 
-                $('#submitResultBox').html("<img src='/Common_1/Images/Indicator.gif' />" + $('#msgSubmit').val());
+                $('#submitResultBox').html("<img src='/Common/Images/Indicator.gif' />" + $('#msgSubmit').val());
 
                 $.ajax({
                     type: "post",
-                    url: "/Reg/CreateAction", //해당 url로 ajax를 보낸다.
+                    url: "./CreateAction", //해당 url로 ajax를 보낸다.
                     data: $('#form1').serialize(),
                     //contentType: "application/json; charset=utf-8",
                     //dataType: "json",
@@ -650,7 +649,7 @@
             var returnMessage = json.ReturnMessage;
 
             if (returnCode == 0) {
-                window.location.href = '/Reg/Success';
+                window.location.href = './Success';
                 /*
                 bPopup = $('#successPopup').bPopup({
                     modalClose: false,
@@ -688,11 +687,11 @@
                 }
 
                 if ($("#emailDupCheck").val() == "Y") {
-                    $('#emailResultBox').html("<img src='/Common_1/Images/Indicator.gif' />" + $('#msgEmailCheck').val());
+                    $('#emailResultBox').html("<img src='/Common/Images/Indicator.gif' />" + $('#msgEmailCheck').val());
 
                     $.ajax({
                         type: "post",
-                        url: "/Reg/CheckEmailAction",
+                        url: "./CheckEmailAction",
                         data: $('#form1').serialize(),
                         //contentType: "application/json; charset=utf-8",
                         //dataType: "json",
@@ -717,11 +716,11 @@
                 }
 
                 if ($("#mobileDupCheck").val() == "Y") {
-                    $('#mobileResultBox').html("<img src='/Common_1/Images/Indicator.gif' />" + $('#msgMobileCheck').val());
+                    $('#mobileResultBox').html("<img src='/Common/Images/Indicator.gif' />" + $('#msgMobileCheck').val());
 
                     $.ajax({
                         type: "post",
-                        url: "/Reg/CheckMobileAction",
+                        url: "./CheckMobileAction",
                         data: $('#form1').serialize(),
                         //contentType: "application/json; charset=utf-8",
                         //dataType: "json",
